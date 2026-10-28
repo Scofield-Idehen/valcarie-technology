@@ -3,67 +3,236 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Valcarie Technology</title>
-<meta name="description" content="Valcarie Technology - basic technology services.">
+<title>Valcarie Technology | Everyday tech help in Warri</title>
+<meta name="description" content="Valcarie Technology helps individuals and small businesses in Warri, Delta State with computer setup, IT support, smart devices and practical tech training.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --navy:#0b1f3a; --gold:#f5a623; --ink:#15202e; --muted:#6b7689; --bg:#f4f6fa; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:"Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:var(--bg); line-height:1.5; }
-  header { background:var(--navy); color:#fff; padding:18px 16px; }
-  .wrap { max-width:960px; margin:0 auto; padding:0 16px; }
-  .brand { display:flex; align-items:center; gap:12px; font-size:22px; font-weight:700; }
-  .logo { width:40px; height:40px; border-radius:50%; background:var(--gold); color:var(--navy); display:flex; align-items:center; justify-content:center; font-weight:800; }
-  .hero { background:linear-gradient(120deg,var(--navy),#16365f); color:#fff; padding:56px 16px; text-align:center; }
-  .hero h1 { margin:0 0 12px; font-size:clamp(28px,5vw,40px); }
-  .hero p { margin:0 auto; max-width:620px; opacity:.9; font-size:17px; }
-  .btn { display:inline-block; margin-top:22px; background:var(--gold); color:var(--navy); text-decoration:none; font-weight:700; padding:12px 22px; border-radius:8px; }
-  section { padding:44px 0; }
-  h2 { color:var(--navy); margin:0 0 18px; font-size:26px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
-  .card { background:#fff; border-radius:12px; padding:20px; box-shadow:0 4px 14px rgba(11,31,58,.08); }
-  .card h3 { margin:0 0 8px; color:var(--navy); font-size:18px; }
-  .card p { margin:0; color:var(--muted); font-size:15px; }
-  .contact { background:#fff; border-top:4px solid var(--gold); }
-  footer { background:var(--navy); color:#cbd5e1; text-align:center; padding:18px 16px; font-size:14px; }
+  :root{
+    --navy:#0b1f3a; --navy-2:#13325c; --gold:#f5a623; --gold-2:#ffc65c;
+    --ink:#15202e; --muted:#5d6b80; --line:#e3e8f0; --bg:#f6f8fb; --white:#fff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Plus Jakarta Sans","Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:10;background:rgba(11,31,58,.96);backdrop-filter:blur(6px);color:#fff}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;text-decoration:none;letter-spacing:-.2px}
+  .logo{width:38px;height:38px;border-radius:10px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-weight:800;font-size:20px}
+  .links{display:flex;gap:26px;font-size:15px}
+  .links a{text-decoration:none;opacity:.85}
+  .links a:hover{opacity:1;color:var(--gold-2)}
+  .nav .cta{background:var(--gold);color:var(--navy);padding:9px 16px;border-radius:8px;font-weight:700;text-decoration:none;font-size:14px}
+  @media(max-width:720px){.links{display:none}}
+
+  /* hero */
+  .hero{background:radial-gradient(900px 400px at 85% -10%,rgba(245,166,35,.25),transparent 60%),linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:84px 0 96px}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-2);margin-bottom:14px}
+  .hero h1{font-size:clamp(32px,5.2vw,52px);line-height:1.1;margin:0 0 18px;letter-spacing:-1px}
+  .hero h1 span{color:var(--gold)}
+  .hero p{font-size:18px;opacity:.9;margin:0 0 28px;max-width:560px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:700;text-decoration:none;font-size:15px}
+  .btn.primary{background:var(--gold);color:var(--navy)}
+  .btn.primary:hover{background:var(--gold-2)}
+  .btn.ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+  .btn.ghost:hover{border-color:#fff}
+  .hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:26px}
+  .hero-card h3{margin:0 0 14px;font-size:17px}
+  .hero-card ul{list-style:none;margin:0;padding:0}
+  .hero-card li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid rgba(255,255,255,.1);font-size:15px}
+  .hero-card li:first-child{border-top:0}
+  .tick{flex:none;width:20px;height:20px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:2px}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero{padding:60px 0 70px}}
+
+  /* sections */
+  section{padding:76px 0}
+  .head{max-width:620px;margin-bottom:36px}
+  .head .eyebrow{color:#c27d00}
+  h2{font-size:clamp(26px,3.6vw,34px);line-height:1.2;margin:0 0 10px;color:var(--navy);letter-spacing:-.5px}
+  .head p{margin:0;color:var(--muted);font-size:17px}
+
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px;transition:transform .15s,box-shadow .15s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(11,31,58,.08)}
+  .icon{width:46px;height:46px;border-radius:12px;background:#fff4e0;color:#c27d00;display:grid;place-items:center;margin-bottom:16px}
+  .icon svg{width:24px;height:24px}
+  .card h3{margin:0 0 8px;font-size:18px;color:var(--navy)}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+
+  .why{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+  .why-item h3{font-size:17px;margin:0 0 6px;color:var(--navy)}
+  .why-item p{margin:0;color:var(--muted);font-size:15px}
+  .num{font-weight:800;color:var(--gold);font-size:14px;letter-spacing:.06em}
+
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
+  .step{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px;position:relative}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:24px;width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:800}
+  .step h3{margin:10px 0 6px;font-size:17px;color:var(--navy)}
+  .step p{margin:0;color:var(--muted);font-size:15px}
+
+  /* contact */
+  .contact{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff}
+  .contact h2{color:#fff}
+  .contact .head p{color:rgba(255,255,255,.8)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .info{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:26px}
+  .row{display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(255,255,255,.1)}
+  .row:first-child{border-top:0;padding-top:0}
+  .row .icon{background:rgba(245,166,35,.15);color:var(--gold);margin:0;flex:none;width:42px;height:42px}
+  .row small{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+  .row strong{font-weight:600;font-size:16px}
+  .map{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.14);min-height:280px;background:#0f2748}
+  .map iframe{width:100%;height:100%;min-height:280px;border:0;display:block}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+
+  footer{background:#071629;color:#a9b6c8;font-size:14px;padding:26px 0}
+  .foot{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center}
+  .foot .reg{color:#d7e0ec}
 </style>
 </head>
 <body>
+
 <header>
-  <div class="wrap brand">
-    <div class="logo">V</div>
-    <span>Valcarie Technology</span>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="logo">V</span>Valcarie Technology</a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#why">Why us</a>
+      <a href="#how">How it works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="cta" href="#contact">Get help</a>
   </div>
 </header>
 
-<div class="hero">
-  <h1>Simple technology, done right.</h1>
-  <p>Valcarie Technology helps individuals and small businesses with everyday tech needs, from setup and support to basic digital solutions.</p>
-  <a class="btn" href="#contact">Contact us</a>
-</div>
-
-<section>
-  <div class="wrap">
-    <h2>What we do</h2>
-    <div class="grid">
-      <div class="card"><h3>Computer setup</h3><p>Installing, configuring and tidying up computers and phones.</p></div>
-      <div class="card"><h3>Basic IT support</h3><p>Help with everyday problems, software and device issues.</p></div>
-      <div class="card"><h3>Smart devices</h3><p>Setting up smart locks, cameras and other home or office devices.</p></div>
-      <div class="card"><h3>Training</h3><p>Simple, practical lessons for using technology with confidence.</p></div>
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Tech support in Warri, Delta State</span>
+        <h1>Simple technology, <span>done right.</span></h1>
+        <p>Valcarie Technology helps individuals and small businesses with everyday tech, from setting up computers and smart devices to fixing problems and learning to use them with confidence.</p>
+        <div class="btns">
+          <a class="btn primary" href="#contact">Contact us</a>
+          <a class="btn ghost" href="#services">See our services</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>We can help you with</h3>
+        <ul>
+          <li><span class="tick">&#10003;</span>New laptops, desktops and phones set up properly</li>
+          <li><span class="tick">&#10003;</span>Slow, faulty or confusing devices sorted out</li>
+          <li><span class="tick">&#10003;</span>Smart locks, cameras and office devices installed</li>
+          <li><span class="tick">&#10003;</span>Hands-on lessons for you or your staff</li>
+        </ul>
+      </div>
     </div>
   </div>
-</section>
 
-<section id="contact">
-  <div class="wrap">
-    <h2>Contact</h2>
-    <div class="card contact">
-      <p><strong>Location:</strong> Warri, Delta State, Nigeria</p>
-      <p><strong>Email:</strong> hello@example.com</p>
-      <p><strong>Phone:</strong> +234 000 000 0000</p>
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">What we do</span>
+        <h2>Everyday tech services</h2>
+        <p>Practical help for homes, shops and offices, explained in plain language.</p>
+      </div>
+      <div class="services">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <h3>Computer setup</h3>
+          <p>Installing, configuring and tidying up computers and phones so they are ready to use from day one.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
+          <h3>Basic IT support</h3>
+          <p>Help with everyday problems, software installs and device issues that slow you down.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.5"/></svg></div>
+          <h3>Smart devices</h3>
+          <p>Setting up smart locks, cameras and other home or office devices, and showing you how to run them.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8l10-5 10 5-10 5z"/><path d="M6 10v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></div>
+          <h3>Training</h3>
+          <p>Simple, practical lessons for individuals and teams who want to use technology with confidence.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>&copy; 2026 Valcarie Technology. All rights reserved.</footer>
+  <section id="why" class="why">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Why Valcarie</span>
+        <h2>Tech help that makes sense</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><div class="num">01</div><h3>Local to Warri</h3><p>Based in Ovwian, Warri, so we are close by when you need hands-on help.</p></div>
+        <div class="why-item"><div class="num">02</div><h3>Plain-language help</h3><p>No jargon. We explain what we did and how to keep things running.</p></div>
+        <div class="why-item"><div class="num">03</div><h3>Homes and small businesses</h3><p>From a single phone to a small office, we set things up to suit how you work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">How it works</span>
+        <h2>Getting help is easy</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Tell us what you need</h3><p>Visit us or get in touch and describe the device or problem.</p></div>
+        <div class="step"><h3>We agree the plan</h3><p>We explain what needs doing before any work starts.</p></div>
+        <div class="step"><h3>We get it sorted</h3><p>We set it up or fix it, then show you how it works.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Contact</span>
+        <h2>Visit or get in touch</h2>
+        <p>Drop by our office in Ovwian, Warri.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="info">
+          <div class="row">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+            <div><small>Address</small><strong>4 Peter Maka Street, opposite NBTC Junction, Ovwian, Warri, Delta State, Nigeria</strong></div>
+          </div>
+          <!-- Add phone and email rows here once confirmed -->
+          <div class="row">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/></svg></div>
+            <div><small>Registration</small><strong>Registered with the Corporate Affairs Commission (CAC), Nigeria</strong></div>
+          </div>
+          <div class="btns" style="margin-top:18px">
+            <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=4+Peter+Maka+Street+Ovwian+Warri+Delta+State+Nigeria" target="_blank" rel="noopener">Get directions</a>
+          </div>
+        </div>
+        <div class="map">
+          <iframe title="Map: Ovwian, Warri" loading="lazy" src="https://maps.google.com/maps?q=4%20Peter%20Maka%20Street%2C%20Ovwian%2C%20Warri%2C%20Delta%20State%2C%20Nigeria&z=15&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; 2026 Valcarie Technology. All rights reserved.</span>
+    <span class="reg">Registered with the Corporate Affairs Commission (CAC), Nigeria</span>
+  </div>
+</footer>
+
 </body>
 </html>
